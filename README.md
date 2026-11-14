@@ -6,7 +6,7 @@ A clean, corporate technology blog website inspired by modern developer platform
 
 1. Copy `.env.example` to `.env` and set a strong, unique `JWT_SECRET`, `ADMIN_USERNAME`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD`.
 2. Install dependencies with `npm install --prefix server` and `npm install --prefix client`.
-3. Run `npm start` from the project root to create the administrator and sample content on first launch, then start the server.
+3. Run `npm start` from the project root. On first launch it creates the administrator and sample content, then starts the API. In a second terminal, run `npm run client` to start the frontend.
 
 The admin portal is available at [http://localhost:5173/admin/login](http://localhost:5173/admin/login), and the website is at [http://localhost:5173](http://localhost:5173).
 
