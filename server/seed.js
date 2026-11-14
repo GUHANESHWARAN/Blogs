@@ -333,10 +333,17 @@ async function publishOrderCreated(order) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
+  const loadSeedCollection = (collection, fallback) => {
+    const filePath = path.join(__dirname, 'data', `${collection}.json`);
+    return fs.existsSync(filePath)
+      ? JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+      : fallback;
+  };
+
   fs.writeFileSync(path.join(dataDir, 'users.json'), JSON.stringify(users, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(dataDir, 'categories.json'), JSON.stringify(categories, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(dataDir, 'authors.json'), JSON.stringify(authors, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(dataDir, 'posts.json'), JSON.stringify(posts, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(dataDir, 'categories.json'), JSON.stringify(loadSeedCollection('categories', categories), null, 2), 'utf-8');
+  fs.writeFileSync(path.join(dataDir, 'authors.json'), JSON.stringify(loadSeedCollection('authors', authors), null, 2), 'utf-8');
+  fs.writeFileSync(path.join(dataDir, 'posts.json'), JSON.stringify(loadSeedCollection('posts', posts), null, 2), 'utf-8');
 
   console.log('Seed completed successfully');
 }
