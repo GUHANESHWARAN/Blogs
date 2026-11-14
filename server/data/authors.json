@@ -1,0 +1,34 @@
+[
+  {
+    "id": "auth-1",
+    "name": "Alex Turner",
+    "role": "Principal Software Architect",
+    "email": "alex.turner@techblog.com",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "bio": "Over 12 years of experience designing scalable distributed systems and backend architectures."
+  },
+  {
+    "id": "auth-2",
+    "name": "Priya Sharma",
+    "role": "AI Research Scientist",
+    "email": "priya.sharma@techblog.com",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+    "bio": "Specialist in deep learning, natural language processing, and multimodal foundation models."
+  },
+  {
+    "id": "auth-3",
+    "name": "Marcus Chen",
+    "role": "Cloud & DevOps Lead",
+    "email": "marcus.chen@techblog.com",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    "bio": "Kubernetes contributor passionate about automated CI/CD and cloud-native infrastructure."
+  },
+  {
+    "id": "auth-4",
+    "name": "Sarah Jenkins",
+    "role": "Senior Security Consultant",
+    "email": "sarah.jenkins@techblog.com",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
+    "bio": "Penetration tester and security researcher advocating for devsecops and zero-trust paradigms."
+  }
+]

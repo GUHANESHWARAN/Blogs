@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Software Development",
+    "slug": "software-development",
+    "description": "Best practices, software engineering principles, system design, and coding guides."
+  },
+  {
+    "id": "cat-2",
+    "name": "Artificial Intelligence & Machine Learning",
+    "slug": "artificial-intelligence-machine-learning",
+    "description": "Neural networks, generative AI, LLMs, and real-world ML applications."
+  },
+  {
+    "id": "cat-3",
+    "name": "Web and Mobile App Development",
+    "slug": "web-and-mobile-app-development",
+    "description": "Modern frontend, backend, cross-platform mobile frameworks, and UI/UX engineering."
+  },
+  {
+    "id": "cat-4",
+    "name": "Technology & Innovation",
+    "slug": "technology-innovation",
+    "description": "Breakthrough tech trends, enterprise computing, and disruptive industry shifts."
+  },
+  {
+    "id": "cat-5",
+    "name": "Cybersecurity",
+    "slug": "cybersecurity",
+    "description": "Zero trust architecture, application security, threat detection, and privacy."
+  },
+  {
+    "id": "cat-6",
+    "name": "Cloud Computing",
+    "slug": "cloud-computing",
+    "description": "Kubernetes, serverless, microservices, hybrid cloud, and modern DevOps."
+  },
+  {
+    "id": "cat-7",
+    "name": "Industry Insights",
+    "slug": "industry-insights",
+    "description": "Tech business perspectives, hiring trends, engineering leadership, and company news."
+  }
+]
