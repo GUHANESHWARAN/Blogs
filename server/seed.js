@@ -1,6 +1,7 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
 const bcrypt = require('bcryptjs');
 const db = require('./data/store');
-require('dotenv').config();
 
 async function seed() {
   const { ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_USERNAME } = process.env;
@@ -109,7 +110,7 @@ async function seed() {
       category: 'Software Development',
       tags: ['Microservices', 'Architecture', 'Kafka', 'Node.js', 'System Design'],
       author: authors[0],
-      featuredImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80',
+      featuredImage: '/uploads/resilient-microservices-hero.jpg',
       readingTime: '8 min read',
       status: 'published',
       isFeatured: true,
@@ -327,8 +328,7 @@ async function publishOrderCreated(order) {
   ];
 
   const fs = require('fs');
-  const path = require('path');
-  const dataDir = path.join(__dirname, 'data');
+  const dataDir = process.env.DATA_DIR || path.join(__dirname, 'data');
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
@@ -341,7 +341,11 @@ async function publishOrderCreated(order) {
   console.log('Seed completed successfully');
 }
 
-seed().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+if (require.main === module) {
+  seed().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+}
+
+module.exports = { seed };

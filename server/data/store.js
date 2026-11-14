@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname);
+const dataDir = process.env.DATA_DIR || __dirname;
 
 function getFilePath(collection) {
   return path.join(dataDir, `${collection}.json`);
