@@ -23,6 +23,8 @@ GitHub stores the source code; it does not run the Node.js server. To host the c
 
 The Blueprint attaches a persistent disk at `/var/data` for posts, categories, authors, admin accounts, and uploaded images. A Render plan that supports persistent disks is required; check Render's current pricing before deployment. Keep the generated JWT secret and admin credentials private.
 
+GitHub Pages can publish only the static React client; it cannot run this app's API or admin backend. The Render service serves both the frontend and backend from one URL.
+
 ---
 
 ## How to Run Manually

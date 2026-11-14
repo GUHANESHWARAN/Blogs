@@ -37,6 +37,8 @@ jobs:
 
       - name: Build website
         working-directory: client
+        env:
+          GITHUB_PAGES: 'true'
         run: npm run build
 
       - name: Upload website
