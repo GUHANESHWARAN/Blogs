@@ -152,7 +152,7 @@ export default function Home() {
                 <p style={{ marginTop: '6px' }}>There are currently no articles in this category.</p>
               </div>
             ) : (
-              <div className="blog-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+              <div className="blog-grid-2">
                 {latestPosts.map((post) => (
                   <BlogCard key={post.id || post._id} post={post} />
                 ))}
