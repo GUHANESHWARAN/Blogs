@@ -66,7 +66,7 @@ export default function Header() {
               to={user ? "/admin/posts" : "/admin/login"}
               className="admin-login-btn"
             >
-              {user ? "Dashboard" : "Login"}
+              {user ? "Dashboard" : "Admin Login"}
             </Link>
           </div>
         </div>

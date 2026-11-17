@@ -17,7 +17,7 @@ import AdminAuthors from './pages/AdminAuthors';
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
   if (loading) {
-    return <div style={{ padding: '60px', textAlign: 'center' }}>Verifying session...</div>;
+    return <div style={{ padding: '60px', textAlign: 'center', color: '#64748b' }}>Loading...</div>;
   }
   if (!user) {
     return <Navigate to="/admin/login" replace />;

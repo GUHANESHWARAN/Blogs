@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { api } from '../api';
 
 const AuthContext = createContext(null);
 
@@ -8,34 +7,39 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('techblog_token');
-    if (!token) {
-      setLoading(false);
-      return;
-    }
-
-    api.getMe()
-      .then(userData => {
-        setUser(userData);
-      })
-      .catch(() => {
-        localStorage.removeItem('techblog_token');
+    const savedUser = localStorage.getItem('papercup_admin');
+    if (savedUser) {
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch (err) {
         setUser(null);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      }
+    }
+    setLoading(false);
   }, []);
 
   const login = async (identifier, password) => {
-    const data = await api.login({ username: identifier, email: identifier, password });
-    localStorage.setItem('techblog_token', data.token);
-    setUser(data.user);
-    return data.user;
+    const cleanUser = (identifier || '').trim().toLowerCase();
+    const cleanPass = (password || '').trim();
+
+    if ((cleanUser === 'gugan@gmail.com' || cleanUser === 'gugan') && cleanPass === 'gugan@123') {
+      const adminUser = {
+        id: 'admin-1',
+        name: 'Gugan',
+        username: 'gugan@gmail.com',
+        email: 'gugan@gmail.com',
+        role: 'admin'
+      };
+      localStorage.setItem('papercup_admin', JSON.stringify(adminUser));
+      setUser(adminUser);
+      return adminUser;
+    }
+
+    throw new Error('Invalid username or password');
   };
 
   const logout = () => {
-    localStorage.removeItem('techblog_token');
+    localStorage.removeItem('papercup_admin');
     setUser(null);
   };
 

@@ -110,6 +110,7 @@ export default function AdminAuthors() {
             <button
               onClick={() => { logout(); navigate('/admin/login'); }}
               className="admin-logout-btn"
+              title="Logout from Admin"
             >
               <LogOut size={13} /> Logout
             </button>
